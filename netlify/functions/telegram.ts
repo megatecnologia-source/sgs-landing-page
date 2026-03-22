@@ -1,11 +1,9 @@
 import { Handler } from '@netlify/functions';
 
 const handler: Handler = async (event) => {
-    // Logs para o painel do Netlify (Functions > Logs)
     console.log('--- Nova requisição recebida na function telegram ---');
     console.log('Método:', event.httpMethod);
 
-    // Pegar o token e chat_id das variáveis privadas
     const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
     const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
@@ -15,12 +13,10 @@ const handler: Handler = async (event) => {
             statusCode: 500,
             body: JSON.stringify({
                 error: 'Configuração ausente no Netlify.',
-                details: 'Verifique se você cadastrou TELEGRAM_BOT_TOKEN e TELEGRAM_CHAT_ID (sem o VITE_).'
             }),
         };
     }
 
-    // Suporte a um "Ping" rápido para teste via navegador
     if (event.httpMethod === 'GET') {
         return {
             statusCode: 200,
@@ -28,49 +24,94 @@ const handler: Handler = async (event) => {
                 status: 'ok',
                 message: 'A API está online e pronta para receber POST.',
                 bot_configured: !!BOT_TOKEN,
-                chat_configured: !!CHAT_ID
+                chat_configured: !!CHAT_ID,
             }),
         };
     }
 
     if (event.httpMethod !== 'POST') {
-        return { statusCode: 405, body: 'Somente POST é permitido' };
+        return { 
+            statusCode: 405, 
+            body: JSON.stringify({ error: 'Método não permitido' }) 
+        };
     }
 
     try {
-        const payload = JSON.parse(event.body || '{}');
+        if (!event.body) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: 'Corpo da requisição ausente' }),
+            };
+        }
+
+        let payload: { text?: string; parse_mode?: string };
+        try {
+            payload = JSON.parse(event.body);
+        } catch {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: 'JSON inválido' }),
+            };
+        }
+
+        if (!payload.text || typeof payload.text !== 'string') {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: 'Campo "text" é obrigatório' }),
+            };
+        }
+
+        if (payload.text.length > 4096) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: 'Texto excede o limite máximo de 4096 caracteres' }),
+            };
+        }
+
         console.log('Enviando para Telegram...');
 
-        // No Node 18, o fetch é global. Mas vamos garantir o tratamento do erro.
         const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
             body: JSON.stringify({
                 chat_id: CHAT_ID,
-                text: payload.text,
-                parse_mode: payload.parse_mode || 'Markdown',
+                text: payload.text.substring(0, 4096),
+                parse_mode: payload.parse_mode === 'HTML' || payload.parse_mode === 'Markdown' 
+                    ? payload.parse_mode 
+                    : 'Markdown',
             }),
         });
 
         const data = await response.json();
+        
         if (!data.ok) {
             console.error('Erro na API do Telegram:', data.description);
-        } else {
-            console.log('Resposta do Telegram: Sucesso');
+            return {
+                statusCode: 502,
+                body: JSON.stringify({ 
+                    error: 'Erro ao enviar mensagem para o Telegram',
+                    details: data.description,
+                }),
+            };
         }
+
+        console.log('Resposta do Telegram: Sucesso');
 
         return {
             statusCode: response.status,
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify({ success: true, message_id: data.result?.message_id }),
         };
-    } catch (error: any) {
-        console.error('Erro interno na function:', error.message);
+    } catch (error) {
+        console.error('Erro interno na function:', error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: error.message }),
+            body: JSON.stringify({ error: 'Erro interno no servidor' }),
         };
     }
 };
