@@ -40,3 +40,6 @@ Thumbs.db
 .cache/
 *.tsbuildinfo
 coverage/
+
+# Documentação interna
+plano/
