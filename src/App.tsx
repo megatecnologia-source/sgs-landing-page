@@ -58,7 +58,7 @@ const App = () => {
   ];
 
   const etapas = [
-    { step: "01", title: "Emissão de Senha", desc: "Cidadão emite a senha pelo terminal", icon: <Ticket className="w-6 h-6" /> },
+    { step: "01", title: "Emissão de Senha", desc: "Cidadão emite uma senha pelo terminal", icon: <Ticket className="w-6 h-6" /> },
     { step: "02", title: "Organização Automática", desc: "Sistema organiza automaticamente a fila", icon: <Settings className="w-6 h-6" /> },
     { step: "03", title: "Exibição no Painel", desc: "Senha exibida no painel eletrônico", icon: <Monitor className="w-6 h-6" /> },
     { step: "04", title: "Chamada para Atendimento", desc: "Cidadão é chamado para atendimento", icon: <Megaphone className="w-6 h-6" /> },
@@ -134,7 +134,7 @@ const App = () => {
                 <img
                   src="https://res.cloudinary.com/dplhygs4v/image/upload/v1772912453/1_oefzgj.png"
                   alt="Logo SGS"
-                  className="h-16 lg:h-20 w-auto object-contain drop-shadow-sm transition-transform group-hover:scale-105"
+                  className="h-32 lg:h-40 w-auto object-contain drop-shadow-sm transition-transform group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -156,7 +156,7 @@ const App = () => {
                 onClick={handleWhatsAppClick}
                 className="px-6 py-3 bg-brand-dark text-white text-xs font-extra-bold uppercase tracking-widest rounded-full hover:bg-brand-primary hover:shadow-2xl hover:shadow-brand-primary/20 transition-all active:scale-95"
               >
-                Agendar Demonstração
+                Agendar uma Reunião
               </a>
             </nav>
 
@@ -194,7 +194,7 @@ const App = () => {
 
       <main className="pt-24 lg:pt-32">
         {/* HERO SECTION */}
-        <section id="hero" className="relative py-20 lg:py-32 overflow-hidden bg-white">
+        <section id="hero" className="relative py-5 lg:py-8 overflow-hidden bg-white">
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[600px] h-[600px] bg-brand-light/10 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -261,7 +261,7 @@ const App = () => {
               >
                 <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_-15px_rgba(0,46,122,0.3)] border-8 border-white">
                   <img
-                    src="https://res.cloudinary.com/dplhygs4v/image/upload/v1773162594/unnamed_1_xj2ka9.jpg"
+                    src="https://res.cloudinary.com/dplhygs4v/image/upload/v1774223816/Gemini_Generated_Image_bgkocebgkocebgko_lblsub.png"
                     alt="SGS System Performance"
                     className="w-full h-auto object-cover aspect-[4/5]"
                     referrerPolicy="no-referrer"
@@ -320,29 +320,39 @@ const App = () => {
 
         {/* COMO FUNCIONA - ETAPAS */}
         <section className="py-24 lg:py-32 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl lg:text-4xl font-black text-brand-dark mb-24 tracking-tight">A Fluidez do SGS na Prática</h2>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl lg:text-4xl font-black text-brand-dark mb-16 tracking-tight text-center">A Fluidez do SGS na Prática</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-12 relative">
-              {/* Connector line for desktop */}
-              <div className="hidden lg:block absolute top-10 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-slate-100 to-transparent -z-10"></div>
-
-              {etapas.map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center group">
-                  <div className="w-20 h-20 bg-white border-4 border-slate-50 text-brand-primary rounded-[1.5rem] flex items-center justify-center mb-8 shadow-2xl shadow-slate-200 transition-all group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-white group-hover:border-brand-primary/20">
-                    {item.icon}
-                  </div>
-                  <div className="relative">
-                    <span className="inline-block px-3 py-1 bg-brand-primary/10 text-brand-primary text-[10px] font-black uppercase tracking-widest rounded-full mb-4">
-                      Passo {item.step}
-                    </span>
-                    <h3 className="text-lg font-bold text-brand-dark mb-3 tracking-tight">{item.title}</h3>
-                    <p className="text-xs text-slate-500 leading-relaxed max-w-[180px] mx-auto opacity-70 group-hover:opacity-100 transition-opacity">
-                      {item.desc}
-                    </p>
-                  </div>
+            <div className="space-y-12">
+              <div className="w-full">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                  {etapas.map((item, idx) => (
+                    <details key={idx} className="group">
+                      <summary className="flex flex-col items-center cursor-pointer list-none">
+                        <div className="w-14 h-14 bg-brand-primary/10 text-brand-primary rounded-2xl flex items-center justify-center mb-4 transition-all group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-white">
+                          {item.icon}
+                        </div>
+                        <span className="text-sm font-bold text-brand-dark text-center">ETAPA {item.step}</span>
+                        <span className="text-xs font-semibold text-brand-primary text-center mt-1">{item.title}</span>
+                      </summary>
+                      <div className="mt-4 text-center text-sm text-slate-600 leading-relaxed px-2">
+                        {item.desc}
+                      </div>
+                    </details>
+                  ))}
                 </div>
-              ))}
+              </div>
+              
+              <div className="w-full max-w-4xl mx-auto">
+                <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-brand-dark/20">
+                  <img
+                    src="https://res.cloudinary.com/dplhygs4v/image/upload/v1774225917/%E1%B9%95ainel_2_yory67.png"
+                    alt="Fluidez SGS na Prática"
+                    className="w-full h-auto object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent"></div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -357,32 +367,32 @@ const App = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div>
-                <span className="inline-block px-4 py-2 bg-white/10 text-brand-light text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-8">
+                <span className="inline-block px-4 py-2 bg-brand-primary/20 text-brand-light text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-8">
                   Vantagens Competitivas
                 </span>
-                <h2 className="text-3xl lg:text-5xl font-black mb-8 leading-tight tracking-tighter">O SGS entrega mais que organização: entrega <span className="text-brand-light">resultado real</span>.</h2>
+                <h2 className="text-3xl lg:text-5xl font-black mb-8 leading-tight tracking-tighter text-white">O SGS entrega mais que organização: entrega <span className="text-brand-primary">resultado real</span>.</h2>
                 <div className="grid sm:grid-cols-2 gap-8">
                   {beneficios.map((item, idx) => (
                     <div key={idx} className="flex gap-5 group">
-                      <div className="w-12 h-12 bg-white/10 text-brand-light rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand-light group-hover:text-brand-dark transition-all">
+                      <div className="w-12 h-12 bg-brand-primary text-white rounded-xl flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-brand-primary transition-all">
                         {item.icon}
                       </div>
                       <div>
-                        <h3 className="text-sm font-bold mb-2 uppercase tracking-wide">{item.title}</h3>
-                        <div className="h-0.5 w-8 bg-brand-light/30 group-hover:w-full transition-all duration-500"></div>
+                        <h3 className="text-sm font-bold mb-2 uppercase tracking-wide text-white">{item.title}</h3>
+                        <div className="h-0.5 w-8 bg-brand-primary/30 group-hover:w-full transition-all duration-500"></div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="relative">
-                <div className="aspect-square bg-white/5 rounded-[3rem] border border-white/10 p-4 relative">
-                   <div className="w-full h-full rounded-[2.5rem] bg-gradient-to-br from-brand-primary/20 to-transparent flex items-center justify-center p-8 overflow-hidden relative group">
-                      <Monitor className="w-48 h-48 text-white/10 absolute -bottom-10 -right-10 group-hover:scale-110 transition-transform" />
+<div className="relative">
+                <div className="aspect-square bg-brand-light/20 rounded-[3rem] border border-brand-light/30 p-4 relative">
+                   <div className="w-full h-full rounded-[2.5rem] bg-white flex items-center justify-center p-8 overflow-hidden relative group shadow-lg">
+                      <Monitor className="w-48 h-48 text-brand-light/20 absolute -bottom-10 -right-10 group-hover:scale-110 transition-transform" />
                       <div className="text-center relative z-10">
-                         <h3 className="text-2xl font-black mb-4">Painel de Gestão Completo</h3>
-                         <p className="text-white/60 mb-8 max-w-sm">Monitore em tempo real a produtividade de cada guichê e o tempo de espera dos cidadãos de onde estiver.</p>
+                         <h3 className="text-3xl lg:text-4xl font-black mb-6 text-brand-dark">Painel de Gestão Completo</h3>
+                         <p className="text-lg text-slate-600 mb-8 max-w-sm">Monitore em tempo real a produtividade de cada guichê e o tempo de espera dos cidadãos de onde estiver.</p>
                          <div className="space-y-4">
                             {[
                               "Acesso via Web (Browser)",
@@ -390,8 +400,8 @@ const App = () => {
                               "Dashboards de Alto Nível",
                               "Gestão Multi-unidade"
                             ].map((p, i) => (
-                              <div key={i} className="flex items-center gap-3 text-sm text-white/80">
-                                <CheckCircle2 className="w-4 h-4 text-brand-light" />
+                              <div key={i} className="flex items-center gap-3 text-base text-brand-dark font-medium">
+                                <CheckCircle2 className="w-5 h-5 text-brand-primary" />
                                 {p}
                               </div>
                             ))}
@@ -437,7 +447,7 @@ const App = () => {
         </section>
 
         {/* ORÇAMENTO PERSONALIZADO SECTION */}
-        <section id="orcamento" className="py-24 lg:py-32 bg-slate-50 overflow-hidden relative">
+        <section id="orcamento" className="py-24 lg:py-32 bg-slate-100 overflow-hidden relative">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-dark skew-x-[-12deg] translate-x-1/4 hidden lg:block"></div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -449,7 +459,7 @@ const App = () => {
                 <h2 className="text-3xl lg:text-5xl font-black text-brand-dark mb-8 tracking-tighter lead-tight">
                   Cada Instituição é <span className="text-brand-primary">Única</span>. Seu Plano também deve ser.
                 </h2>
-                <p className="text-lg text-slate-500 mb-10 leading-relaxed">
+                <p className="text-lg text-slate-600 mb-10 leading-relaxed">
                   Para clínicas locais ou redes hospitalares complexas, o SGS escala conforme sua necessidade. Não cobramos por funcionalidades que você não usa.
                 </p>
                 
@@ -460,12 +470,12 @@ const App = () => {
                      { title: "Suporte e Consultoria", desc: "Acompanhamos sua equipe do setup ao dia a dia.", icon: <UserCheck className="w-5 h-5" /> }
                    ].map((item, i) => (
                      <div key={i} className="flex gap-4">
-                        <div className="w-10 h-10 bg-white shadow-md rounded-xl flex items-center justify-center text-brand-primary shrink-0">
+                        <div className="w-10 h-10 bg-brand-primary/10 shadow-md rounded-xl flex items-center justify-center text-brand-primary shrink-0">
                            {item.icon}
                         </div>
                         <div>
                            <h4 className="font-bold text-brand-dark text-sm capitalize">{item.title}</h4>
-                           <p className="text-xs text-slate-400 mt-1">{item.desc}</p>
+                           <p className="text-xs text-slate-600 mt-1">{item.desc}</p>
                         </div>
                      </div>
                    ))}
@@ -483,19 +493,19 @@ const App = () => {
                 </a>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-md p-8 lg:p-12 rounded-[3rem] border border-white/20 shadow-2xl lg:text-white">
+<div className="bg-brand-primary p-8 lg:p-12 rounded-[3rem] border border-white/20 shadow-2xl text-white">
                 <h3 className="text-2xl font-black mb-6 tracking-tight">O que está incluso?</h3>
                 <ul className="space-y-4 mb-10">
                    {escopo.map((item, i) => (
-                     <li key={i} className="flex items-center gap-3 text-sm opacity-80 group">
-                        <CheckCircle2 className="w-5 h-5 text-brand-light shrink-0" />
+                     <li key={i} className="flex items-center gap-3 text-sm opacity-90 group">
+                        <CheckCircle2 className="w-5 h-5 text-white shrink-0" />
                         {item}
                      </li>
                    ))}
                 </ul>
-                <div className="p-6 bg-brand-primary/20 rounded-2xl border border-brand-light/20">
-                   <p className="text-xs font-bold uppercase tracking-widest mb-2 text-brand-light">Diferencial SGS</p>
-                   <p className="text-sm leading-relaxed opacity-90">
+                <div className="p-6 bg-brand-dark rounded-2xl border border-brand-dark">
+                   <p className="text-xs font-bold uppercase tracking-widest mb-2 text-white">Diferencial SGS</p>
+                   <p className="text-sm leading-relaxed text-white">
                      Desenvolvemos módulos customizados para fluxos específicos de triagem ou integração com sistemas legados da sua instituição.
                    </p>
                 </div>
@@ -671,21 +681,31 @@ const App = () => {
         </div>
       </footer>
 
-      {/* Floating WhatsApp UI */}
-      <a
-        href="https://wa.me/5598983444737"
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={handleWhatsAppClick}
-        className="fixed bottom-10 right-10 z-50 group flex items-center"
-      >
-        <div className="bg-white px-6 py-3 rounded-2xl shadow-2xl mr-4 opacity-0 group-hover:opacity-100 transition-all translate-x-10 group-hover:translate-x-0 hidden md:block">
-           <span className="text-sm font-bold text-brand-dark">Falar com Consultor</span>
-        </div>
-        <div className="w-16 h-16 bg-[#25D366] text-white rounded-[1.5rem] flex items-center justify-center shadow-[0_20px_40px_-5px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform active:scale-95 duration-300">
-           <MessageCircle className="w-8 h-8 fill-current" />
-        </div>
-      </a>
+      {/* WhatsApp Float Button */}
+      <div className="fixed bottom-10 right-10 z-50 flex gap-3 items-end">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="group flex items-center bg-white text-brand-dark rounded-full shadow-2xl hover:bg-brand-primary hover:text-white transition-all px-4 py-3"
+          aria-label="Voltar ao topo"
+        >
+          <ChevronRight className="w-5 h-5 rotate-[-90deg]" />
+          <span className="text-sm font-bold ml-2 hidden group-hover:block">Voltar ao topo</span>
+        </button>
+        <a
+          href="https://wa.me/5598983444737"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleWhatsAppClick}
+          className="group flex items-center"
+        >
+          <div className="bg-white px-6 py-3 rounded-2xl shadow-2xl mr-4 opacity-0 group-hover:opacity-100 transition-all translate-x-10 group-hover:translate-x-0 hidden md:block">
+             <span className="text-sm font-bold text-brand-dark">Falar com Consultor</span>
+          </div>
+          <div className="w-16 h-16 bg-[#25D366] text-white rounded-[1.5rem] flex items-center justify-center shadow-[0_20px_40px_-5px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform active:scale-95 duration-300">
+             <MessageCircle className="w-8 h-8 fill-current" />
+          </div>
+        </a>
+      </div>
     </div>
   );
 };
