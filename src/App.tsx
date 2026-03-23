@@ -144,13 +144,13 @@ const App = () => {
                 <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-none">Management</span>
               </div>
             </div>
-            
+
             <nav className="hidden md:flex items-center gap-10">
               <a href="#solucao" className="text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors">Solução</a>
               <a href="#beneficios" className="text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors">Benefícios</a>
               <a href="#orcamento" className="text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors">Orçamento</a>
               <a
-                href="https://wa.me/5598983444737"
+                href="https://wa.me/5598983444737?text=Olá,%20gostaria%20de%20Agendar%20uma%20Reunião"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleWhatsAppClick}
@@ -215,7 +215,7 @@ const App = () => {
                   <p className="text-lg lg:text-xl text-slate-500 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                     O <strong>SGS (Sistema de Gerenciamento de Senhas)</strong> é a solução definitiva para eliminar o caos das filas em Órgãos Públicos, Clínicas e Hospitais. Transforme esperas frustrantes em experiências de alto nível.
                   </p>
-                  
+
                   <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
                     <a
                       href="#aceite"
@@ -225,7 +225,7 @@ const App = () => {
                       <ChevronRight className="w-5 h-5" />
                     </a>
                     <a
-                      href="https://wa.me/5598983444737"
+                      href="https://wa.me/5598983444737?text=Olá,%20gostaria%20de%20Falar%20com%20um%20Especialista"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={handleWhatsAppClick}
@@ -273,7 +273,7 @@ const App = () => {
                     </p>
                   </div>
                 </div>
-                
+
                 {/* Floating Element */}
                 <div className="absolute -bottom-10 -right-10 bg-white p-6 rounded-3xl shadow-2xl border border-slate-100 hidden xl:block animate-bounce-slow">
                   <div className="flex items-center gap-4">
@@ -322,7 +322,7 @@ const App = () => {
         <section className="py-24 lg:py-32 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl lg:text-4xl font-black text-brand-dark mb-16 tracking-tight text-center">A Fluidez do SGS na Prática</h2>
-            
+
             <div className="space-y-12">
               <div className="w-full">
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -342,7 +342,7 @@ const App = () => {
                   ))}
                 </div>
               </div>
-              
+
               <div className="w-full max-w-4xl mx-auto">
                 <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-brand-dark/20">
                   <img
@@ -361,7 +361,7 @@ const App = () => {
         <section id="beneficios" className="py-24 lg:py-32 bg-brand-dark text-white relative overflow-hidden">
           {/* Watermark Background */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none opacity-[0.03]">
-             <img src="https://res.cloudinary.com/dplhygs4v/image/upload/v1772912453/5_x3ylrc.png" alt="" className="h-full w-auto object-contain" />
+            <img src="https://res.cloudinary.com/dplhygs4v/image/upload/v1772912453/5_x3ylrc.png" alt="" className="h-full w-auto object-contain" />
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -386,28 +386,28 @@ const App = () => {
                 </div>
               </div>
 
-<div className="relative">
+              <div className="relative">
                 <div className="aspect-square bg-brand-light/20 rounded-[3rem] border border-brand-light/30 p-4 relative">
-                   <div className="w-full h-full rounded-[2.5rem] bg-white flex items-center justify-center p-8 overflow-hidden relative group shadow-lg">
-                      <Monitor className="w-48 h-48 text-brand-light/20 absolute -bottom-10 -right-10 group-hover:scale-110 transition-transform" />
-                      <div className="text-center relative z-10">
-                         <h3 className="text-3xl lg:text-4xl font-black mb-6 text-brand-dark">Painel de Gestão Completo</h3>
-                         <p className="text-lg text-slate-600 mb-8 max-w-sm">Monitore em tempo real a produtividade de cada guichê e o tempo de espera dos cidadãos de onde estiver.</p>
-                         <div className="space-y-4">
-                            {[
-                              "Acesso via Web (Browser)",
-                              "Relatórios Exportáveis",
-                              "Dashboards de Alto Nível",
-                              "Gestão Multi-unidade"
-                            ].map((p, i) => (
-                              <div key={i} className="flex items-center gap-3 text-base text-brand-dark font-medium">
-                                <CheckCircle2 className="w-5 h-5 text-brand-primary" />
-                                {p}
-                              </div>
-                            ))}
-                         </div>
+                  <div className="w-full h-full rounded-[2.5rem] bg-white flex items-center justify-center p-8 overflow-hidden relative group shadow-lg">
+                    <Monitor className="w-48 h-48 text-brand-light/20 absolute -bottom-10 -right-10 group-hover:scale-110 transition-transform" />
+                    <div className="text-center relative z-10">
+                      <h3 className="text-3xl lg:text-4xl font-black mb-6 text-brand-dark">Painel de Gestão Completo</h3>
+                      <p className="text-lg text-slate-600 mb-8 max-w-sm">Monitore em tempo real a produtividade de cada guichê e o tempo de espera dos cidadãos de onde estiver.</p>
+                      <div className="space-y-4">
+                        {[
+                          "Acesso via Web (Browser)",
+                          "Relatórios Exportáveis",
+                          "Dashboards de Alto Nível",
+                          "Gestão Multi-unidade"
+                        ].map((p, i) => (
+                          <div key={i} className="flex items-center gap-3 text-base text-brand-dark font-medium">
+                            <CheckCircle2 className="w-5 h-5 text-brand-primary" />
+                            {p}
+                          </div>
+                        ))}
                       </div>
-                   </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -420,7 +420,7 @@ const App = () => {
             <div className="text-center mb-20">
               <h2 className="text-3xl lg:text-4xl font-black text-brand-dark tracking-tight">Quem já Modernizou com SGS</h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {depoimentos.map((dep, idx) => (
                 <div key={idx} className="p-10 bg-slate-50 rounded-[2.5rem] relative group border border-slate-100">
@@ -449,7 +449,7 @@ const App = () => {
         {/* ORÇAMENTO PERSONALIZADO SECTION */}
         <section id="orcamento" className="py-24 lg:py-32 bg-slate-100 overflow-hidden relative">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-dark skew-x-[-12deg] translate-x-1/4 hidden lg:block"></div>
-          
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
@@ -462,27 +462,27 @@ const App = () => {
                 <p className="text-lg text-slate-600 mb-10 leading-relaxed">
                   Para clínicas locais ou redes hospitalares complexas, o SGS escala conforme sua necessidade. Não cobramos por funcionalidades que você não usa.
                 </p>
-                
+
                 <div className="space-y-6 mb-10">
-                   {[
-                     { title: "Escalabilidade Ilimitada", desc: "De 1 guichê a centenas de unidades integradas.", icon: <Zap className="w-5 h-5" /> },
-                     { title: "Segurança de Dados Corporativa", desc: "Conformidade total com LGPD e normas de saúde.", icon: <Shield className="w-5 h-5" /> },
-                     { title: "Suporte e Consultoria", desc: "Acompanhamos sua equipe do setup ao dia a dia.", icon: <UserCheck className="w-5 h-5" /> }
-                   ].map((item, i) => (
-                     <div key={i} className="flex gap-4">
-                        <div className="w-10 h-10 bg-brand-primary/10 shadow-md rounded-xl flex items-center justify-center text-brand-primary shrink-0">
-                           {item.icon}
-                        </div>
-                        <div>
-                           <h4 className="font-bold text-brand-dark text-sm capitalize">{item.title}</h4>
-                           <p className="text-xs text-slate-600 mt-1">{item.desc}</p>
-                        </div>
-                     </div>
-                   ))}
+                  {[
+                    { title: "Escalabilidade Ilimitada", desc: "De 1 guichê a centenas de unidades integradas.", icon: <Zap className="w-5 h-5" /> },
+                    { title: "Segurança de Dados Corporativa", desc: "Conformidade total com LGPD e normas de saúde.", icon: <Shield className="w-5 h-5" /> },
+                    { title: "Suporte e Consultoria", desc: "Acompanhamos sua equipe do setup ao dia a dia.", icon: <UserCheck className="w-5 h-5" /> }
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-4">
+                      <div className="w-10 h-10 bg-brand-primary/10 shadow-md rounded-xl flex items-center justify-center text-brand-primary shrink-0">
+                        {item.icon}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-brand-dark text-sm capitalize">{item.title}</h4>
+                        <p className="text-xs text-slate-600 mt-1">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
                 <a
-                  href="https://wa.me/5598983444737"
+                  href="https://wa.me/5598983444737?text=Olá%20Gostaria%20de%20Solicitar%20um%20Orçamento%20Personalizado."
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={handleWhatsAppClick}
@@ -493,21 +493,21 @@ const App = () => {
                 </a>
               </div>
 
-<div className="bg-brand-primary p-8 lg:p-12 rounded-[3rem] border border-white/20 shadow-2xl text-white">
+              <div className="bg-brand-primary p-8 lg:p-12 rounded-[3rem] border border-white/20 shadow-2xl text-white">
                 <h3 className="text-2xl font-black mb-6 tracking-tight">O que está incluso?</h3>
                 <ul className="space-y-4 mb-10">
-                   {escopo.map((item, i) => (
-                     <li key={i} className="flex items-center gap-3 text-sm opacity-90 group">
-                        <CheckCircle2 className="w-5 h-5 text-white shrink-0" />
-                        {item}
-                     </li>
-                   ))}
+                  {escopo.map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm opacity-90 group">
+                      <CheckCircle2 className="w-5 h-5 text-white shrink-0" />
+                      {item}
+                    </li>
+                  ))}
                 </ul>
                 <div className="p-6 bg-brand-dark rounded-2xl border border-brand-dark">
-                   <p className="text-xs font-bold uppercase tracking-widest mb-2 text-white">Diferencial SGS</p>
-                   <p className="text-sm leading-relaxed text-white">
-                     Desenvolvemos módulos customizados para fluxos específicos de triagem ou integração com sistemas legados da sua instituição.
-                   </p>
+                  <p className="text-xs font-bold uppercase tracking-widest mb-2 text-white">Diferencial SGS</p>
+                  <p className="text-sm leading-relaxed text-white">
+                    Desenvolvemos módulos customizados para fluxos específicos de triagem ou integração com sistemas legados da sua instituição.
+                  </p>
                 </div>
               </div>
             </div>
@@ -516,33 +516,33 @@ const App = () => {
 
         {/* PRAZO E GARANTIA SECTION (INTEGRADA) */}
         <section className="py-24 bg-white border-b border-slate-100">
-           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-24">
-                 <div className="flex items-center gap-6">
-                    <Calendar className="w-12 h-12 text-brand-primary opacity-20" />
-                    <div>
-                       <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Tempo de Setup</p>
-                       <p className="text-xl font-black text-brand-dark leading-tight">Implantação em 20 dias</p>
-                    </div>
-                 </div>
-                 <div className="w-px h-12 bg-slate-100 hidden lg:block"></div>
-                 <div className="flex items-center gap-6">
-                    <ShieldCheck className="w-12 h-12 text-brand-primary opacity-20" />
-                    <div>
-                       <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Compromisso</p>
-                       <p className="text-xl font-black text-brand-dark leading-tight">Garantia Vitalícia Técnica</p>
-                    </div>
-                 </div>
-                 <div className="w-px h-12 bg-slate-100 hidden lg:block"></div>
-                 <div className="flex items-center gap-6">
-                    <RefreshCw className="w-12 h-12 text-brand-primary opacity-20" />
-                    <div>
-                       <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Atendimento</p>
-                       <p className="text-xl font-black text-brand-dark leading-tight">Suporte 24h Prioritário</p>
-                    </div>
-                 </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-24">
+              <div className="flex items-center gap-6">
+                <Calendar className="w-12 h-12 text-brand-primary opacity-20" />
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Tempo de Setup</p>
+                  <p className="text-xl font-black text-brand-dark leading-tight">Implantação em 20 dias</p>
+                </div>
               </div>
-           </div>
+              <div className="w-px h-12 bg-slate-100 hidden lg:block"></div>
+              <div className="flex items-center gap-6">
+                <ShieldCheck className="w-12 h-12 text-brand-primary opacity-20" />
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Compromisso</p>
+                  <p className="text-xl font-black text-brand-dark leading-tight">Garantia Vitalícia Técnica</p>
+                </div>
+              </div>
+              <div className="w-px h-12 bg-slate-100 hidden lg:block"></div>
+              <div className="flex items-center gap-6">
+                <RefreshCw className="w-12 h-12 text-brand-primary opacity-20" />
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Atendimento</p>
+                  <p className="text-xl font-black text-brand-dark leading-tight">Suporte 24h Prioritário</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* ACEITE DA PROPOSTA - FORM */}
@@ -595,7 +595,7 @@ const App = () => {
               <p className="hidden">
                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
               </p>
-              
+
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-3">
                   <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Instituição / Empresa</label>
@@ -646,7 +646,7 @@ const App = () => {
                 Líderes em soluções tecnológicas para gestão de fluxo de pessoas. Inovação constante para Órgãos Públicos e o Setor de Saúde em todo o território nacional.
               </p>
             </div>
-            
+
             <div>
               <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-light mb-8">Navegação</h4>
               <ul className="space-y-4 text-sm font-medium text-white/60">
@@ -660,12 +660,12 @@ const App = () => {
               <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-light mb-8">Contato</h4>
               <div className="space-y-6">
                 <div className="flex items-center gap-4 text-sm font-bold">
-                   <Phone className="w-5 h-5 text-brand-light" />
-                   (98) 9 8344-4737
+                  <Phone className="w-5 h-5 text-brand-light" />
+                  (98) 9 8344-4737
                 </div>
                 <div className="flex items-center gap-4 text-sm font-bold">
-                   <Mail className="w-5 h-5 text-brand-light" />
-                   comercial@megatecnologia.com
+                  <Mail className="w-5 h-5 text-brand-light" />
+                  comercial@megatecnologia.com
                 </div>
               </div>
             </div>
@@ -674,8 +674,8 @@ const App = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-black uppercase tracking-[0.25em] text-white/30">
             <p>© 2026 Mega Tecnologia. Todos os direitos reservados.</p>
             <div className="flex gap-8">
-               <a href="#" className="hover:text-white transition-colors">Privacidade</a>
-               <a href="#" className="hover:text-white transition-colors">Termos</a>
+              <a href="#" className="hover:text-white transition-colors">Privacidade</a>
+              <a href="#" className="hover:text-white transition-colors">Termos</a>
             </div>
           </div>
         </div>
@@ -692,17 +692,17 @@ const App = () => {
           <span className="text-sm font-bold ml-2 hidden group-hover:block">Voltar ao topo</span>
         </button>
         <a
-          href="https://wa.me/5598983444737"
+          href="https://wa.me/5598983444737?text=Olá%20Gostaria%20de%20%20Falar%20com%20um%20Consultor."
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleWhatsAppClick}
           className="group flex items-center"
         >
           <div className="bg-white px-6 py-3 rounded-2xl shadow-2xl mr-4 opacity-0 group-hover:opacity-100 transition-all translate-x-10 group-hover:translate-x-0 hidden md:block">
-             <span className="text-sm font-bold text-brand-dark">Falar com Consultor</span>
+            <span className="text-sm font-bold text-brand-dark">Falar com Consultor</span>
           </div>
           <div className="w-16 h-16 bg-[#25D366] text-white rounded-[1.5rem] flex items-center justify-center shadow-[0_20px_40px_-5px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform active:scale-95 duration-300">
-             <MessageCircle className="w-8 h-8 fill-current" />
+            <MessageCircle className="w-8 h-8 fill-current" />
           </div>
         </a>
       </div>
